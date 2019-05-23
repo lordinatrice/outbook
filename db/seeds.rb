@@ -8,6 +8,7 @@
 
 
 
+
 puts "start"
 user = User.create(email: 'antoine@lewagoon.org', password: 'helloooo')
 
@@ -18,4 +19,11 @@ Place.create(name:'Jardin fleuri', address: 'Saint Germain', category: 'garden',
 Place.create(name:'Rooftop à Batignolles', address: 'Batignolles', category: 'rooftop', capacity: '6', user_id: 2)
 Place.create(name:'Rooftop au centre de Paris', address: 'Sentier', category: 'rooftop', capacity: '6', user_id: 2)
 Place.create(name:'Grand jardin à Paris', address: 'Ranelagh', category: 'garden', capacity: '12', user_id: 2)
+
+puts "start"
+
+user = User.create(email: "antoine@lewagoon.org", password: "helloooo")
+
+Place.create(name: "cosy appartment", address: "le wagon", category: "terrace", capacity: 10, user_id: 1)
+
 puts "end"
