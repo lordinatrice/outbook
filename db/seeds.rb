@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Starting seeding"
+
+puts "start"
+User.destroy_all
+user = User.create(email: 'antoine@lewagoon.org', password: 'helloooo')
+Place.destroy_all
+Place.create(name:'Terrasse ensoleillée', address: 'Pigalle', category: 'terrace', capacity: '4', user_id: 1)
+Place.create(name:'Grande terrasse', address: 'Sentier', category: 'terrace', capacity: '8', user_id: 1)
+Place.create(name:'Jardin', address: 'Montreuil', category: 'garden', capacity: '10', user_id: 1)
+Place.create(name:'Jardin fleuri', address: 'Saint Germain', category: 'garden', capacity: '6', user_id: 1)
+Place.create(name:'Rooftop à Batignolles', address: 'Batignolles', category: 'rooftop', capacity: '6', user_id: 1)
+Place.create(name:'Rooftop au centre de Paris', address: 'Sentier', category: 'rooftop', capacity: '6', user_id: 1)
+Place.create(name:'Grand jardin à Paris', address: 'Ranelagh', category: 'garden', capacity: '12', user_id: 1)
+puts "end"
