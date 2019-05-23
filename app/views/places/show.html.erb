@@ -36,9 +36,9 @@
         <li>Category : <%= @place.category %></li>
         <li>Adress : <%= @place.address %></li>
         <li>Capacity : <%= @place.capacity %> pleople can stand in there</li>
-        <!-- <li>A note from Place Owner : <%= @place.description %></li> -->
+
       </ul>
-      <button type="button" class="btn btn-warning"><%= link_to "Book NOW", booking_new_path %></button>
+      <button type="button" class="btn btn-warning"><%= link_to "Book NOW", new_place_booking_path(@place) %></button>
       <%= link_to "Return to the list", places_path %>
       <!-- <i class="fas fa-long-arrow-alt-left"></i> -->
     </div>
