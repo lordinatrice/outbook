@@ -1,5 +1,5 @@
 class Place < ApplicationRecord
-  CATAGORIES = ["terrace", "garden", "rooftop"]
+  CATEGORIES = ["terrace", "garden", "rooftop"]
   belongs_to :user
   has_many :bookings
   validates :address, presence: true
