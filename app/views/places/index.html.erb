@@ -1,0 +1,19 @@
+<h1>Places</h1>
+
+<div class="card-place">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <div class="card-place-infos">
+    <% @places.each do |place| %>
+      <div>
+        <h2><%= place.name %></h2>
+        <p>
+          <%= place.category %> |
+          <%= place.address %>
+        </p>
+      </div>
+      <h2 class="card-place-pricing"> <%= place.capacity %> </h2>
+    <% end %>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-place-user avatar-bordered"/>
+  </div>
+</div>
+
