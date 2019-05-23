@@ -29,6 +29,4 @@ group :development, :test do
   gem 'devise'
   gem 'carrierwave', '~> 1.2'
   gem 'cloudinary', '~> 1.9.1'
-
 end
-
