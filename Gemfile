@@ -29,5 +29,7 @@ group :development, :test do
 
   gem 'devise'
 
+  gem 'carrierwave', '~> 1.2'
+
 end
 
