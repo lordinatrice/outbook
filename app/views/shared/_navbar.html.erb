@@ -18,7 +18,7 @@
       </li>
 
       <% if current_user %>
-        <li class="nav-item">
+        <li id="nav-item">
           <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
         </li>
         <li id="nav-item dropdown">
