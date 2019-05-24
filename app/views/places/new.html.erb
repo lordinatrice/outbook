@@ -9,11 +9,8 @@
         <%= f.input :capacity, input_html: { min: '0'} %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'btn btn-primary' %> | <%= link_to "Back to list", places_path %>
       <% end %>
-      <br>
-      <button name="button" class="btn btn-primary"> <%= link_to "Back to list", places_path %> </button>
-
     </div>
   </div>
 
