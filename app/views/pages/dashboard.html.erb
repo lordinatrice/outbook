@@ -1,1 +1,25 @@
-<h1>My profil</h1>
+<div class="container">
+  <h1>My profil</h1>
+
+  <h2>My places</h2>
+  <% @places.each do |place| %>
+  <div class="card-link d-flex justify-content-between p-2 m-0">
+
+    <div class="card-product col-10">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <div class="card-product-infos">
+        <h2><%= place["name"].capitalize %></h2>
+        <p>On <strong><%= place["address"] %></strong></p>
+        <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
+        <p class="tag-booked"><em>Booked</em></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-2 text-align-center">
+      <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+  </div>
+  <% end %>
+
+</div>

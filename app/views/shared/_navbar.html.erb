@@ -18,15 +18,15 @@
       </li>
 
       <% if current_user %>
-        <li id="nav-item">
-        <%= link_to "Sign out", destroy_user_session_path, class: "nav-link"  %>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
         </li>
         <li id="nav-item dropdown">
           <button class="dropdown-toggle" id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My places", new_place_path, class: "dropdown-item" %>
+            <%= link_to "My places and reservations", dashboard_path, class: "dropdown-item" %>
             <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
           </div>
         </li>
