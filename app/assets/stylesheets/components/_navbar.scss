@@ -22,6 +22,7 @@
 #nav-item {
   height: 100%;
   padding: 0;
+  margin-top: 5px;
 }
 
 #nav-item:hover {
@@ -30,7 +31,24 @@
   cursor: pointer;
 }
 
+#navbarDropdown {
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  opacity: 0.7;
+}
+
 .dropdown-item:hover {
-  font-weight: bolder;
+  opacity: 1;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.dropdown-toggle {
+  border: none;
+  background-color: transparent;
 }
 

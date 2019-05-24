@@ -6,7 +6,7 @@
   <div class="card-link d-flex justify-content-between p-2 m-0">
 
     <div class="card-product col-10">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <%= cl_image_tag booking.place.photo, height: 650, width: 1400, crop: :fill%>
       <div class="card-product-infos">
         <h2><%= booking.place["name"].capitalize %></h2>
         <p>On <strong><%= booking.date %></strong></p>
@@ -14,7 +14,9 @@
     </div>
     <a href=""><%= link_to "", booking_path(booking) %></a>
     <div class="col-2 text-align-center">
-      <%= link_to 'Delete', booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if policy(booking).destroy? %>
+        <%= link_to 'Delete', booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
 
   </div>

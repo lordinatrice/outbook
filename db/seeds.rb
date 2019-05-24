@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "start"
-user = User.create(email: 'antoine@lewagoon.org', password: 'helloooo')
+user = User.create(email: 'Marguerite', password: 'secret')
 
+Place.destroy_all
 Place.create(name:'Terrasse ensoleillée', address: 'Pigalle', category: 'Terrace', capacity: '4', user_id: 2)
 Place.create(name:'Grande terrasse', address: 'Sentier', category: 'Terrace', capacity: '8', user_id: 2)
 Place.create(name:'Jardin', address: 'Montreuil', category: 'Garden', capacity: '10', user_id: 2)
@@ -21,17 +22,5 @@ puts "start"
 
 user = User.create(email: 'antoine@lewagoon.org', password: 'helloooo')
 
-Place.create(name:'Terrasse ensoleillée', address: 'Pigalle', category: 'Terrace', capacity: '4', user_id: 1)
-Place.create(name:'Grande terrasse', address: 'Sentier', category: 'Terrace', capacity: '8', user_id: 1)
-Place.create(name:'Jardin', address: 'Montreuil', category: 'Garden', capacity: '10', user_id: 1)
-Place.create(name:'Jardin fleuri', address: 'Saint Germain', category: 'Garden', capacity: '6', user_id: 1)
-Place.create(name:'Rooftop à Batignolles', address: 'Batignolles', category: 'Rooftop', capacity: '6', user_id: 1)
-Place.create(name:'Rooftop au centre de Paris', address: 'Sentier', category: 'Rooftop', capacity: '6', user_id: 1)
-Place.create(name:'Grand jardin à Paris', address: 'Ranelagh', category: 'Garden', capacity: '12', user_id: 1)
-
-
-user = User.create(email: "antoine@lewagoon.org", password: "helloooo")
-
-Place.create(name: "cosy appartment", address: "le wagon", category: "Terrace", capacity: 10, user_id: 1)
 
 puts "end"

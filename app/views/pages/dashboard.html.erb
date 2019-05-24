@@ -5,9 +5,8 @@
   <% @places.each do |place| %>
   <div class="card-link d-flex justify-content-between p-2 m-0">
     <div class="card-product col-10">
-      <%= link_to '', place_path(place), class: "stretched-link" %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-      <div class="card-product-infos .stretched-link">
+         <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
+      <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
         <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
@@ -16,7 +15,9 @@
       </div>
     </div>
     <div class="col-2 text-align-center">
-      <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if policy(place).destroy? %>
+        <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
 
   </div>
