@@ -5,7 +5,7 @@
         <%= simple_form_for @place do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
-        <%= f.input :category, collection: ["Terrace", "Garden", "Rooftop"] %>
+        <%= f.input :category, :include_blank => false, collection: ["Terrace", "Garden", "Rooftop"] %>
         <%= f.input :capacity, input_html: { min: '0'} %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
