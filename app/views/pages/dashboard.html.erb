@@ -16,7 +16,9 @@
       </div>
     </div>
     <div class="col-2 text-align-center">
-      <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if policy(place).destroy? %>
+        <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
 
   </div>

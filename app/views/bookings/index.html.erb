@@ -14,7 +14,9 @@
     </div>
     <a href=""><%= link_to "", booking_path(booking) %></a>
     <div class="col-2 text-align-center">
-      <%= link_to 'Delete', booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if policy(booking).destroy? %>
+        <%= link_to 'Delete', booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
 
   </div>
