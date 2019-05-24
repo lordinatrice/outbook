@@ -1,7 +1,13 @@
-<h1>Outbook</h1>
-<h3>Book an outdour place for your special event</h3>
+<!-- banner -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544890603-cf0ce2d65561?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container">
+    <h1>Outbook</h1>
+    <p>Book an outdour place for your special event.</p>
+    <button type="button" class="btn btn-flat"> <%= link_to "index", places_path %></button>
+  </div>
+</div>
 
-<!-- banner - background image -->
+
 <!-- search bar -->
 
 <hr>
@@ -10,13 +16,15 @@
   <div class="row justify-content-center">
     <div class="col-md-6 py-5">
 
-      <p>Find me in app/views/pages/home.html.erb</p>
+      <p>Basic admin links for amazing developpers</p>
 
-      <%= link_to "index", places_path %>
+      <button type="button" class="btn btn-primary"> <%= link_to "index", places_path %></button>
 
-      <%= link_to "bookings", bookings_path %>
+      <button type="button" class="btn btn-primary"><%= link_to "bookings", bookings_path %></button>
 
-      <%= link_to "open a new user session", new_user_session_path %>
+      <button type="button" class="btn btn-primary"> <%= link_to "add a place", new_place_path %></button>
+
+      <button type="button" class="btn btn-primary"> <%= link_to "open a new user session", new_user_session_path %></button>
 
     </div>
   </div>
