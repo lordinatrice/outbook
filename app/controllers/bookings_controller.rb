@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def new
     @booking = Booking.new
     @place = Place.find(params[:place_id])
@@ -26,7 +25,9 @@ class BookingsController < ApplicationController
   end
 
   def delete
-
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
   end
 
   private
