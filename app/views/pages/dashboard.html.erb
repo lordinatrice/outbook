@@ -6,7 +6,7 @@
   <div class="card-link d-flex justify-content-between p-2 m-0">
 
     <div class="card-product col-10">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+         <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>

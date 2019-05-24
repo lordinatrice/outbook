@@ -1,9 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: transparent;
+  background-color: #F4F4F4;
   transition: 0.5s background-color ease;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .navbar-lewagon-white {
@@ -17,3 +18,19 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#nav-item {
+  height: 100%;
+  padding: 0;
+}
+
+#nav-item:hover {
+  border-bottom: 3px solid #FD1016;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  font-weight: bolder;
+}
+
