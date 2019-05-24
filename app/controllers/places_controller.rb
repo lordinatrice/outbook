@@ -28,7 +28,7 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to places_path, notice: 'Place was successfully destroyed.'
+    redirect_to place_path, notice: 'Place was successfully destroyed.'
     authorize @place
   end
 
