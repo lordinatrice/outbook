@@ -11,7 +11,7 @@
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
         <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
-        <p class="tag-booked"><em>Booked</em></p>
+        <p class="btn btn-primary"><em>Booked</em></p>
         <% end %>
       </div>
     </div>
