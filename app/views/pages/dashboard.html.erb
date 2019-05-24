@@ -4,10 +4,10 @@
   <h2>My places</h2>
   <% @places.each do |place| %>
   <div class="card-link d-flex justify-content-between p-2 m-0">
-
     <div class="card-product col-10">
+      <%= link_to '', place_path(place), class: "stretched-link" %>
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-      <div class="card-product-infos">
+      <div class="card-product-infos .stretched-link">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
         <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
