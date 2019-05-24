@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :index, :delete]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "/dashboard", to: "pages#dashboard"
 end
