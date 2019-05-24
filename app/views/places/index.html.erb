@@ -1,7 +1,7 @@
 <div class="places">
   <% @places.each do |place| %>
     <div class="card-place">
-     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+     <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
       <div class="card-place-infos">
         <div>
           <h2><%= place.name %></h2>
@@ -13,8 +13,6 @@
         <div class="card-place-capacity">
           <i class="fas fa-user-friends"> <%= place.capacity %> </i>
         </div>
-
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-place-user avatar-bordered"/>
       </div>
       <a href=""><%= link_to "", place_path(place) %></a>
     </div>

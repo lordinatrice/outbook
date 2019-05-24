@@ -19,7 +19,6 @@ class PlacesController < ApplicationController
     @place.user = current_user
     authorize @place
     if @place.save
-
       redirect_to dashboard_path
     else
       render :new
