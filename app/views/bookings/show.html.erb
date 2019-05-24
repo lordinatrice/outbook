@@ -1,3 +1,13 @@
-<h1>My booking : <%= @booking.place.name %></h1>
+<div class="container">
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @booking.place.name.capitalize %> <em>(<%= @booking.place.category.capitalize %>)</em></h2>
+        <p> Address: <%= @booking.place.address %></p>
+      </div>
+      <h2 class="card-trip-pricing">On: <%= @booking.date %></h2>
+    </div>
+  </div>
+</div>
 
-<p>Date : <%= @booking.date %></p>

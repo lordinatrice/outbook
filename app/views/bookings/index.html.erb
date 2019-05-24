@@ -1,1 +1,24 @@
-<h1>All bookings</h1>
+
+<div class="container">
+  <h1>My bookings</h1>
+
+  <% @bookings.each do |booking, place| %>
+  <div class="card-link d-flex justify-content-between">
+
+    <div class="card-product col-10">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <div class="card-product-infos">
+        <h2><%= booking.place["name"].capitalize %></h2>
+        <p>On <strong><%= booking.date %></strong></p>
+      </div>
+    </div>
+    <a href=""><%= link_to "", booking_path(booking) %></a>
+    <div class="col-2 text-align-center">
+      <%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+  </div>
+  <% end %>
+
+</div>
+
