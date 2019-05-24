@@ -9,11 +9,19 @@
     <div class="carousel-item active">
       <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
     </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @place.photo2, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+      <div class="carousel-item">
+        <% if @place.photo2 == nil %>
+          <%= cl_image_tag @place.photo2, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+        <%  else %>
+          <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+        <% end %>
     </div>
     <div class="carousel-item">
-      <%= cl_image_tag @place.photo3, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+      <% if @place.photo3 == nil %>
+          <%= cl_image_tag @place.photo3, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+        <%  else %>
+          <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+        <% end %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
