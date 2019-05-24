@@ -5,4 +5,26 @@
   color: #eee;
   text-align: center;
   padding-top: 40vh;
+  position: relative;
+}
+
+.filter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#banner-typed-text {
+  font-size: 24px;
+  font-color: white;
+  z-index: 50;
+}
+
+#title {
+  font-size: 80px;
+  font-color: white;
+  margin: 300px 0px;
+  letter-spacing: 5px;
 }
