@@ -1,7 +1,18 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+    skip_policy_scope
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
   def new
     @booking = Booking.new
     @place = Place.find(params[:place_id])
+    authorize @booking
   end
 
   def create
@@ -9,19 +20,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.place = @place
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
       render :new
     end
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
-  def index
-    @bookings = Booking.all
   end
 
   def delete
