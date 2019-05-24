@@ -1,7 +1,12 @@
-<h1>Outbook</h1>
-<h3>Book an outdour place for your special event</h3>
 
-<!-- banner - background image -->
+
+<div class="home-banner">
+  <h1>Outbook</h1>
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+</div>
+
 <!-- search bar -->
 
 <hr>
@@ -10,13 +15,15 @@
   <div class="row justify-content-center">
     <div class="col-md-6 py-5">
 
-      <p>Find me in app/views/pages/home.html.erb</p>
+      <p>Basic admin links for amazing developpers</p>
 
-      <%= link_to "index", places_path %>
+      <button type="button" class="btn btn-primary"> <%= link_to "index", places_path %></button>
 
-      <%= link_to "bookings", bookings_path %>
+      <button type="button" class="btn btn-primary"><%= link_to "bookings", bookings_path %></button>
 
-      <%= link_to "open a new user session", new_user_session_path %>
+      <button type="button" class="btn btn-primary"> <%= link_to "add a place", new_place_path %></button>
+
+      <button type="button" class="btn btn-primary"> <%= link_to "open a new user session", new_user_session_path %></button>
 
     </div>
   </div>
