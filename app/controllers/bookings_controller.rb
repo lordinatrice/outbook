@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def new
     @booking = Booking.new
     @place = Place.find(params[:place_id])
@@ -22,6 +23,10 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+  end
+
+  def delete
+
   end
 
   private

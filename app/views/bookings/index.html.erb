@@ -1,1 +1,14 @@
-<h1>All bookings</h1>
+
+<div class="container">
+  <h1>My bookings</h1>
+
+  <% @bookings.each do |booking, place| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+    <div class="card-product-infos">
+      <h2><%= booking.place["name"].capitalize %></h2>
+      <p>On <strong><%= booking.date %></strong></p>
+    </div>
+  </div>
+  <% end %>
+</div>
