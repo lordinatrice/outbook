@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+    <%= cl_image_tag @booking.place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @booking.place.name.capitalize %> <em>(<%= @booking.place.category.capitalize %>)</em></h2>

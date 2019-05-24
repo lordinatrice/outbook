@@ -1,7 +1,7 @@
 <div class="places">
   <% @places.each do |place| %>
     <div class="card-place">
-     <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
+     <%= cl_image_tag place.photo, height: 750, width: 1600, crop: :fill, class: "d-block w-100" %>
       <div class="card-place-infos">
         <div>
           <h2><%= place.name %></h2>
