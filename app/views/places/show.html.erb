@@ -8,8 +8,6 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://images.unsplash.com/photo-1556617102-f83d72199feb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="...">
-      <!-- changer par cloudinary photos -->
-
 
     </div>
     <div class="carousel-item">
@@ -28,6 +26,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<%= cl_image_tag @place.photo, height: 300, width: 400, crop: :fill %>
 
 <!-- Détails du lieu -->
 <div class="container">
