@@ -16,16 +16,19 @@ h1 {
   height: 100vh;
   position: sticky;
   top: 0;
+  width: 30%;
 }
 
 
 .places {
-  display: flex;
+  // display: flex;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   margin: 20px 10px;
+  width: 70%;
   flex-grow: 1;
+  height: 300px;
 }
 
 .card-place {
@@ -83,33 +86,33 @@ h1 {
 
 //responsiveness
 // Small device
-@media (min-width: 100px) and (max-width: 575px) {
-  .places {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .places {
+//     grid-template-columns: 1fr;
+//   }
+//   #map {
+//     display: none;
+//   }
+// }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 576px) {
-  .places {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 576px) {
+//   .places {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .places {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .places {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .placess {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .placess {
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//   }
+// }
 
