@@ -7,6 +7,10 @@
   z-index: 100;
 }
 
+.navbar-nav {
+  padding: 0px;
+}
+
 .navbar-lewagon-white {
   background-color: white;
 }
@@ -21,12 +25,12 @@
 
 #nav-item {
   height: 100%;
-  padding: 0;
+  padding: 0px;
   margin-top: 5px;
 }
 
 #nav-item:hover {
-  border-bottom: 3px solid #FD1016;
+  border-bottom: 4px solid #06BA63;
   border-radius: 0;
   cursor: pointer;
 }
@@ -44,7 +48,7 @@
 }
 
 .dropdown-toggle::after {
-    display:none;
+  display:none;
 }
 
 .dropdown-toggle {
@@ -53,5 +57,5 @@
 }
 
 .logo {
-  color: #FD1016;
+  color: #06BA63;
 }

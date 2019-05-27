@@ -11,18 +11,25 @@
       <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
-        <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
-        <p class="btn btn-primary"><em>Booked</em></p>
+        <% if place.bookings.present? %>
+        <p class="btn btn-dark"><em>Booked</em></p>
         <% end %>
       </div>
     </div>
-    <div class="col-2 text-align-center">
-      <% if policy(place).destroy? %>
-        <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+    <div class="col-2 align-self-center">
+     <% if policy(place).destroy? %>
+       <div title="Edit">
+         <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
+       </div>
+       <div title="Delete">
+        <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+       </div>
+     <% end %>
     </div>
 
   </div>
   <% end %>
+
+  <button class="mt-5" id="valid-btn"><%= link_to "Add a new place", new_place_path %></button>
 
 </div>
