@@ -1,6 +1,14 @@
 class PlacesController < ApplicationController
   def index
-    @places = Place.all
+    @places = Place.where.not(latitude: nil, longitude: nil)
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
+        image_url: helpers.asset_url('tree_marker.png')
+      }
+    end
     skip_policy_scope
   end
 
