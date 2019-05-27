@@ -1,3 +1,4 @@
+<%= render 'infowindow' %>
 <div class="places">
   <% @places.each do |place| %>
     <div class="card-place">
@@ -17,6 +18,15 @@
       <a href=""><%= link_to "", place_path(place) %></a>
     </div>
   <% end %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 </div>
 
 
