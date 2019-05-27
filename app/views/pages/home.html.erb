@@ -1,9 +1,8 @@
 <div class="home-banner">
   <div class="filter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
     <h1 id="title">Outbook</h1>
-    <p>
-      <span id="banner-typed-text"></span>
-    </p>
+    <p><span id="banner-typed-text"></span></p>
+    <button id="home-btn"> <%= link_to "Find a place", places_path %></button>
   </div>
 </div>
 
@@ -12,19 +11,15 @@
 <hr>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6 py-5">
-
-      <p>Basic admin links for amazing developpers</p>
-
-      <button type="button" class="btn btn-primary"> <%= link_to "index", places_path %></button>
-
-      <button type="button" class="btn btn-primary"><%= link_to "bookings", bookings_path %></button>
-
-      <button type="button" class="btn btn-primary"> <%= link_to "add a place", new_place_path %></button>
-
-      <button type="button" class="btn btn-primary"> <%= link_to "open a new user session", new_user_session_path %></button>
-
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558948944/photo-1533743471820-07198f456843_cvtdhn.jpg)">Terrace
+      <a href=""><%= link_to "", places_path %></a>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558949004/photo-1508333409359-027beab53750_auv2uw.jpg)">Garden
+      <a href=""><%= link_to "", places_path %></a>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558949039/photo-1513279922550-250c2129b13a_ivd2e7.jpg)">Rooftop
+      <a href=""><%= link_to "", places_path %></a>
     </div>
   </div>
 </div>

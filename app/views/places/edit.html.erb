@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Edit <%= @place.name %></h1>
+
+        <%= render 'form', place: @place %>
+
+        <%= link_to "| Back to my places |", dashboard_path %>
+    </div>
+  </div>
+  <br>
+</div>
+
+
