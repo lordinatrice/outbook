@@ -19,6 +19,7 @@
     <div class="col-2 text-align-center">
       <% if policy(place).destroy? %>
         <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
       <% end %>
     </div>
 
