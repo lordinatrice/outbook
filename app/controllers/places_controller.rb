@@ -35,6 +35,18 @@ class PlacesController < ApplicationController
     authorize @place
   end
 
+  def edit
+    @place = Place.find(params[:id])
+    authorize @place
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to dashboard_path
+    authorize @place
+  end
+
   private
 
   def place_params
