@@ -19,6 +19,7 @@ class PlacesController < ApplicationController
     @place.user = current_user
     authorize @place
     if @place.save
+      flash[:alert] = "Your place was saved!"
       redirect_to dashboard_path
     else
       render :new
