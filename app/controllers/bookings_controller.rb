@@ -22,8 +22,10 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
+      flash[:notice] = "Well done! You successfully booked a place 🎉 "
       redirect_to booking_path(@booking)
     else
+      flash[:alert] = "Oops! 😱 a problem has occurred while creating your place "
       render :new
     end
   end
@@ -31,7 +33,8 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
+    flash[:notice] = "You successfully destroyed a booking ☠️"
+    redirect_to bookings_path
     authorize @booking
   end
 
