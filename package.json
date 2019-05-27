@@ -12,6 +12,7 @@
     "typed.js": "^2.0.10"
   },
   "devDependencies": {
+    "webpack": "^4.32.2",
     "webpack-dev-server": "^3.4.1"
   }
 }
