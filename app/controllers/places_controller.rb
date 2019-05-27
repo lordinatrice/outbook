@@ -19,8 +19,10 @@ class PlacesController < ApplicationController
     @place.user = current_user
     authorize @place
     if @place.save
+      flash[:notice] = "Well done! You successfully added a place 🎉 "
       redirect_to dashboard_path
     else
+      flash[:alert] = "Oops! 😱 a problem has occurred while creating your place "
       render :new
     end
   end
@@ -28,7 +30,8 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to place_path, notice: 'Place was successfully destroyed.'
+    flash[:notice] = "You successfully deleted a place ☠️"
+    redirect_to dashboard_path
     authorize @place
   end
 
