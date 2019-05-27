@@ -11,7 +11,7 @@
       <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
-        <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
+        <% if place.bookings.present? %>
         <p class="btn btn-dark"><em>Booked</em></p>
         <% end %>
       </div>
