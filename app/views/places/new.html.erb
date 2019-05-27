@@ -2,19 +2,6 @@
   <div class="form-row align-items-center">
     <div class="col-xs-12 col-sm-12 col-sm-offset-1">
       <h1>Rent your outdoor</h1>
-      <%= simple_form_for @place do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :category, :include_blank => false, collection: ["Terrace", "Garden", "Rooftop"] %>
-      <%= f.input :capacity, input_html: { min: '0'} %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :photo2 %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :photo3 %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit class: 'btn btn-primary' %> | <%= link_to "Back to list", places_path %>
-      <% end %>
 
       <%= render 'form', place: @place %>
 
