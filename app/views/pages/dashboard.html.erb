@@ -10,15 +10,15 @@
         <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
-        <p>On <strong><%= place["address"] %></strong></p>
+        <p>At <strong><%= place["address"] %></strong></p>
         <% if place.bookings.present? %>
         <p class="btn btn-dark"><em>Booked</em></p>
         <% end %>
       </div>
     </div>
-    <div class="col-2 align-self-center">
+    <div class="col-2 d-flex align-self-center">
      <% if policy(place).destroy? %>
-       <div title="Edit">
+       <div class="mr-2" title="Edit">
          <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
        </div>
        <div title="Delete">
