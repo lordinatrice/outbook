@@ -1,0 +1,19 @@
+.headline {
+  border-bottom: solid grey 0.8px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  h2 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 18px;
+    color: grey;
+    padding-bottom: 10px;
+  }
+  .btn {
+    height: 40px;
+  }
+}

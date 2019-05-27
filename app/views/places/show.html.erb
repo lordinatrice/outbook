@@ -5,19 +5,22 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+
+
+
+ <div class="carousel-inner">
     <div class="carousel-item active">
       <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
     </div>
     <div class="carousel-item">
-      <% if @place.photo2 == nil %>
+      <% if @place.photo2.url == nil %>
       <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
       <%  else %>
       <%= cl_image_tag @place.photo2, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
       <% end %>
     </div>
     <div class="carousel-item">
-      <% if @place.photo3 == nil %>
+      <% if @place.photo3.url == nil %>
       <%= cl_image_tag @place.photo, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
       <%  else %>
       <%= cl_image_tag @place.photo3, height: 650, width: 1400, crop: :fill, class: "d-block w-100" %>
@@ -39,17 +42,26 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6 py-5">
-      <h3><%= @place.name %></h3>
-      <!-- name remplacer par title -->
-      <ul>
-        <li>Category : <%= @place.category %></li>
-        <li>Adress : <%= @place.address %></li>
-        <li>Capacity : <%= @place.capacity %> pleople can stand in there</li>
+      <div class="headline">
+        <div class="infos-show">
+          <h2><%= @place.name %></h3>
+          <h4><i class="fas fa-map-marker-alt"></i>  <%= @place.address %></h4>
+        </div>
+        <button type="button" id="valid-btn" class="btn btn-primary" class="right"><%= link_to "Book NOW", new_place_booking_path(@place) %></button>
 
-      </ul>
-      <button type="button" class="btn btn-primary"><%= link_to "Book NOW", new_place_booking_path(@place) %></button>
-      <%= link_to "Return to the list", places_path %>
-       <i class="fas fa-long-arrow-alt-left"></i>
+      </div>
+      <!-- name remplacer par title -->
+      <div class="about">
+        <h4>Details</h4>
+        <ul>
+          <li>Category: <strong><%= @place.category %></strong></li>
+          <li></i> Capacity: <strong><%= @place.capacity %></strong>  pleople can stand in there</li>
+        </ul>
+      </div>
+
+      | <%= link_to "Back to list", places_path %> |
     </div>
   </div>
 </div>
+<!--
+justify content space between -->
