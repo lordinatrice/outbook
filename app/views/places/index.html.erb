@@ -1,32 +1,34 @@
-<%= render 'infowindow' %>
-<div class="places">
-  <% @places.each do |place| %>
-    <div class="card-place">
-     <%= cl_image_tag place.photo, height: 750, width: 1600, crop: :fill, class: "d-block w-100" %>
-      <div class="card-place-infos">
-        <div>
-          <h2><%= place.name %></h2>
-          <p>
-            <%= place.category %> |
-            <em><%= place.address %></em>
-          </p>
+
+<div class="row">
+  <div class="places">
+    <% @places.each do |place| %>
+      <div class="card-place">
+       <%= cl_image_tag place.photo, height: 750, width: 1600, crop: :fill, class: "d-block w-100" %>
+        <div class="card-place-infos">
+          <div>
+            <h2><%= place.name %></h2>
+            <p>
+              <%= place.category %> |
+              <em><%= place.address %></em>
+            </p>
+          </div>
+          <div class="card-place-capacity">
+            <i class="fas fa-user-friends"> <%= place.capacity %> </i>
+          </div>
         </div>
-        <div class="card-place-capacity">
-          <i class="fas fa-user-friends"> <%= place.capacity %> </i>
-        </div>
+        <a href=""><%= link_to "", place_path(place) %></a>
       </div>
-      <a href=""><%= link_to "", place_path(place) %></a>
-    </div>
-  <% end %>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
+    <% end %>
+  </div>
 </div>
 
-
+<div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
+</div>
