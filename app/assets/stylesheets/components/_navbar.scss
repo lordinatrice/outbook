@@ -7,6 +7,10 @@
   z-index: 100;
 }
 
+.navbar-nav {
+  padding: 0px;
+}
+
 .navbar-lewagon-white {
   background-color: white;
 }
@@ -21,7 +25,7 @@
 
 #nav-item {
   height: 100%;
-  padding: 0;
+  padding: 0px;
   margin-top: 5px;
 }
 
@@ -44,7 +48,7 @@
 }
 
 .dropdown-toggle::after {
-    display:none;
+  display:none;
 }
 
 .dropdown-toggle {
