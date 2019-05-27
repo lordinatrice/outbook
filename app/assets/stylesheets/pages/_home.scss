@@ -60,6 +60,11 @@
   right: 0;
 }
 
+#title {
+  font-family: 'Poppins', sans-serif;
+}
+
+
 
 //responsiveness
 // Small device
@@ -89,3 +94,4 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
