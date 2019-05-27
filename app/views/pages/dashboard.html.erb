@@ -6,22 +6,26 @@
   <div class="card-link d-flex justify-content-between p-2 m-0">
 
     <div class="card-product col-10">
-         <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
+        <%= link_to '', place_path(place), class: "stretched-link" %>
+        <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%= place["name"].capitalize %></h2>
         <p>On <strong><%= place["address"] %></strong></p>
         <% if @bookings_as_owner.where(params[:place_id] == place["id"]) && @bookings_as_owner.presence %>
-        <p class="tag-booked"><em>Booked</em></p>
+        <p class="btn btn-primary"><em>Booked</em></p>
         <% end %>
       </div>
     </div>
-    <div class="col-2 text-align-center">
+    <div class="col-2 align-self-center">
       <% if policy(place).destroy? %>
-        <%= link_to 'Delete', place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
+        <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
 
   </div>
   <% end %>
+
+  <%= link_to "Add a new place", new_place_path, class: "btn btn-primary mt-5"  %>
 
 </div>
