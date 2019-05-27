@@ -1,21 +1,14 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-  // if (mapElement) { // only build a map if there's a div#map to inject into
-  //   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  //   const map = new mapboxgl.Map({
-  //     container: 'map',
-  //     style: 'https://api.mapbox.com/styles/v1/svilder/cjw65ool003zi1cmvxn9jpwij.html?fresh=true&title=true&access_token=pk.eyJ1Ijoic3ZpbGRlciIsImEiOiJjanZkcmJ1MmYxbXNpNGRtbWc2d2Fzd2xqIn0.ITBL_KZpAM9H2n9MvttRCA#12.0/48.866500/2.317600/0'
-  //   });
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/svilder/cjw65ool003zi1cmvxn9jpwij'
     });
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
 
@@ -33,7 +26,7 @@ const fitMapToMarkers = (map, markers) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const element = document.createElement('div');
     element.className = 'marker';
     element.style.backgroundImage = `url('${marker.image_url}')`;
@@ -43,7 +36,7 @@ const addMarkersToMap = (map, markers) => {
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
+      .setPopup(popup)
       .addTo(map);
   });
 };
