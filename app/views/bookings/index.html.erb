@@ -15,7 +15,9 @@
     <a href=""><%= link_to "", booking_path(booking) %></a>
     <div class="col-2 align-self-center">
       <% if policy(booking).destroy? %>
-        <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div title='Delete'>
+          <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       <% end %>
     </div>
 
@@ -24,4 +26,3 @@
   <button class="mt-5" id="valid-btn"><%= link_to "See other places", places_path %></button>
 
 </div>
-

@@ -17,10 +17,14 @@
       </div>
     </div>
     <div class="col-2 align-self-center">
-      <% if policy(place).destroy? %>
-        <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
+     <% if policy(place).destroy? %>
+       <div title="Edit">
+         <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
+       </div>
+       <div title="Delete">
         <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+       </div>
+     <% end %>
     </div>
 
   </div>
