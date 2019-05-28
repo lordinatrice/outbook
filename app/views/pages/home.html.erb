@@ -5,10 +5,10 @@
     <br>
     <!-- search form -->
     <div class="container">
+          <%= form_tag places_path, method: :get do %>
       <div class="row">
         <div class="col category">
-          <%= form_tag places_path, method: :get do %>
-            <%= select_tag(:category, options_for_select(['Select a category','Garden','Rooftop', 'Terrace']))%>
+            <%= select_tag(:category, options_for_select(['Select a category', 'Garden','Rooftop', 'Terrace']), class: "form-control")%>
         </div>
         <div class="col address">
             <%= text_field_tag :address,
@@ -20,7 +20,7 @@
         </div>
         <br>
         <div class="col button">
-          <%= submit_tag "Find a place", id:"home-btn" %>
+          <%= submit_tag "Find a place ☀️", id:"home-btn" %>
         </div>
         <% end %>
     </div>
