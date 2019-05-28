@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   # pg_search_scope :search_by_address, against: :address
 
   def index
-
     if params[:category].present?
       @places = Place.where(category: params[:category]) ||
       @places = Place.where(address: params[:address])
@@ -16,7 +15,8 @@ class PlacesController < ApplicationController
           lat: place.latitude,
           lng: place.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
-          image_url: helpers.asset_url('tree_marker.png')
+          image_url: helpers.asset_url('tree_marker.png'),
+          id: place.id
         }
       end
     skip_policy_scope
