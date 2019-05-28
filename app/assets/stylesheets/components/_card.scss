@@ -1,3 +1,13 @@
+.card-place {
+  position: relative;
+}
+
+.card-place-capacity {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;

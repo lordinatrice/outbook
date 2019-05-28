@@ -1,9 +1,9 @@
 @import "show";
+@import "infowindow";
 
 h1 {
   text-align: center;
 }
-
 
 .main-container {
   display: flex;
@@ -19,6 +19,10 @@ h1 {
   width: 30%;
 }
 
+.highlight {
+
+  border: 3px solid rgba(6,186,98,0.8);
+}
 
 .places {
   // display: flex;
@@ -35,6 +39,7 @@ h1 {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 3px;
+  height: 320px;
 }
 
 .card-place > a {

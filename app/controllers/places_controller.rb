@@ -20,7 +20,8 @@ class PlacesController < ApplicationController
           lat: place.latitude,
           lng: place.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
-          image_url: helpers.asset_url('tree_marker.png')
+          image_url: helpers.asset_url('tree_marker.png'),
+          id: place.id
         }
       end
     skip_policy_scope
