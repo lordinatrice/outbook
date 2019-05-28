@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
+  set_tab :dashboard
 
   def home
   end

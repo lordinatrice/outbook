@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>My profil</h1>
+  <h1>My dashboard</h1>
+
+  <%= tabs_tag do |tab| %>
+    <%= tab.dashboard 'My places', dashboard_path %>
+    <%= tab.bookings 'My bookings', bookings_path %>
+  <% end %>
 
   <h2>My places</h2>
   <% @places.each do |place| %>
