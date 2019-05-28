@@ -13,15 +13,24 @@ const initMapbox = () => {
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    const mapMarkers = []
+
+    const mapMarkers = [];
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      const newMarker = new mapboxgl.Marker()
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '45px';
+      element.style.height = '45px';
+
+      const newMarker = new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
-      mapMarker.push(newMarker)
+
+      mapMarkers.push(newMarker)
       // We use the "getElement" funtion provided by mapbox-gl to access to the marker's HTML an set an id
       newMarker.getElement().dataset.markerId = marker.id;
       // Put a microphone on the new marker listening for a mouseenter event
@@ -31,7 +40,7 @@ const initMapbox = () => {
     });
 
     fitMapToMarkers(map, markers);
-    addMarkersToMap(map, markers);
+    // addMarkersToMap(map, markers);
     openInfoWindow(mapMarkers);
   }
 };
@@ -42,26 +51,9 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
-const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-    const element = document.createElement('div');
-    element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
-    element.style.backgroundSize = 'contain';
-    element.style.width = '100px';
-    element.style.height = '100px';
-
-    new mapboxgl.Marker(element)
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map);
-  });
-};
-
 const openInfoWindow = (markers) => {
   // Select all cards
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card-place');
   cards.forEach((card, index) => {
     // Put a microphone on each card listening for a mouseenter event
     card.addEventListener('mouseenter', () => {
@@ -77,7 +69,7 @@ const openInfoWindow = (markers) => {
 
 const toggleCardHighlighting = (event) => {
   // We select the card corresponding to the marker's id
-  const card = document.querySelector(`[data-flat-id="${event.currentTarget.dataset.markerId}"]`);
+  const card = document.querySelector(`[data-place-id="${event.currentTarget.dataset.markerId}"]`);
   // Then we toggle the class "highlight" to the card
   card.classList.toggle('highlight');
 }
