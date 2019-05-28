@@ -1,8 +1,8 @@
 <%= simple_form_for @place do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
+  <%= f.input :name, placeholder: 'The Garden of the Hesperides' %>
+  <%= f.input :address, placeholder: 'Rue de Paradis, Paris' %>
   <%= f.input :category, :include_blank => false, collection: ["Terrace", "Garden", "Rooftop"] %>
-  <%= f.input :capacity, input_html: { min: '0'} %>
+  <%= f.input :capacity, input_html: { min: '0'}, placeholder:'1' %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :photo2 %>
