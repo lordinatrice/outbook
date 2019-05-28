@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = current_user.bookings
     skip_policy_scope

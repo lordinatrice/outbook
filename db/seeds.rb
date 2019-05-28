@@ -8,7 +8,6 @@
 
 puts "start"
 
-
 User.create(email: 'yo@yo.com', password: 'secret')
 User.create(email: 'marguerite@fleur.fr', password: 'secret')
 User.create(email: 'demo@lewagon.org', password: 'secret')

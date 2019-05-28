@@ -6,5 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @places = current_user.places
+    @bookings = current_user.bookings
+    skip_policy_scope
   end
 end

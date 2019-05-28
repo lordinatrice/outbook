@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
+gem "tabs_on_rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
