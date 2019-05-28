@@ -1,11 +1,14 @@
-<%= cl_image_tag place.photo, height: 350, width: 350, crop: :fill, class: "" %>
 
-<h2><%= place.name %></h2>
+  <%= cl_image_tag place.photo, height: 350, width: 350, crop: :fill, class: "" %>
 
-<p>
-  <%= place.category %> |
-  <em><%= place.address %></em>
-</p>
-<i class="fas fa-user-friends"> <%= place.capacity %> </i>
+<div class="">
+  <h3><%= place.name %></h3>
 
-<%= link_to "More details", place_path(place) %>
+  <p>
+    <%= place.category %> |
+    <em><%= place.address %></em>
+  </p>
+  <i class="fas fa-user-friends"> <%= place.capacity %> </i>
+
+  <%= link_to "", place_path(place), class: "stretched-link"%>
+</div>
