@@ -6,7 +6,14 @@ class PlacesController < ApplicationController
   def index
 
     if params[:category].present?
-      @places = Place.where(category: params[:category]) ||
+      @places = Place.where(category: params[:category]) &&
+      params[:address].present?
+      @places = Place.where(address: params[:address])
+    elsif
+      params[:category].present?
+      @places = Place.where(category: params[:category])
+    elsif
+      params[:address].present?
       @places = Place.where(address: params[:address])
     else
       @places = Place.where.not(latitude: nil, longitude: nil)
