@@ -1,9 +1,9 @@
 @import "show";
+@import "infowindow";
 
 h1 {
   text-align: center;
 }
-
 
 .main-container {
   display: flex;
@@ -19,6 +19,9 @@ h1 {
   width: 30%;
 }
 
+.highlight {
+  background-color: blue;
+}
 
 .places {
   // display: flex;
