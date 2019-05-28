@@ -19,3 +19,7 @@ initMapbox();
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initAutocomplete();
+
+import { initAutocompleteBis } from '../plugins/init_autocomplete';
+
+initAutocompleteBis();
