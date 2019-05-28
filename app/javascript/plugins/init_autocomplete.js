@@ -15,5 +15,4 @@ const initAutocompleteBis = () => {
 };
 
 
-export { initAutocomplete };
-export { initAutocompleteBis };
+export { initAutocomplete, initAutocompleteBis };
