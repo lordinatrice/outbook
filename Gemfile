@@ -31,4 +31,8 @@ group :development, :production, :test do
   gem 'carrierwave', '~> 1.2'
   gem 'cloudinary', '~> 1.9.1'
   gem 'pundit'
+  gem 'pg_search'
+  gem 'algoliasearch-rails'
+  gem 'searchkick', '~> 3.0'
+
 end
