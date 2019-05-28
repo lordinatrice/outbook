@@ -66,13 +66,13 @@
     <div class="form">
       <div class="container">
         <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <h3>Booking</h3>
-          <%= simple_form_for [@place, @booking], method: "post" do |f| %>
-            <%= f.error_notification %>
-            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <% if current_user = @place.user %>
-              <%= link_to "Edit this place", edit_place_path(@place), id: "home-btn", class: "booking", method: :post %>
-            <% else %>
+          <% if current_user = @place.user %>
+            <button id="home-btn" style="margin: 0px 60px;"><%= link_to "Edit this place", edit_place_path(@place) %></button>
+          <% else %>
+            <h3>Booking</h3>
+            <%= simple_form_for [@place, @booking], method: "post" do |f| %>
+              <%= f.error_notification %>
+              <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
               <%= f.button :submit, "Book this place", id: "valid-btn", class: "form-actions booking", style: "color: white" %>
             <% end %>
           <% end %>
