@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   CATEGORIES = ["Terrace", "Garden", "Rooftop"]
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :activities, through: :joints
   validates :address, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :capacity, presence: true

@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = current_user.bookings
     skip_policy_scope
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
       redirect_to dashboard_path('#nav-bookings')
     else
       flash[:alert] = "Oops! 😱 a problem has occurred while booking your place "
-      render :new
+      render :show
     end
   end
 
