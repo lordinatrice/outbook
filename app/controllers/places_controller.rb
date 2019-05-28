@@ -1,14 +1,24 @@
 class PlacesController < ApplicationController
+  # include PgSearch
+  # pg_search_scope :search_by_category, against: :category
+  # pg_search_scope :search_by_address, against: :address
+
   def index
-    @places = Place.where.not(latitude: nil, longitude: nil)
-    @markers = @places.map do |place|
-      {
-        lat: place.latitude,
-        lng: place.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
-        image_url: helpers.asset_url('tree_marker.png')
-      }
+
+    if params[:category].present?
+      @places = Place.where(category: params[:category]) ||
+      @places = Place.where(address: params[:address])
+    else
+      @places = Place.where.not(latitude: nil, longitude: nil)
     end
+      @markers = @places.map do |place|
+        {
+          lat: place.latitude,
+          lng: place.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
+          image_url: helpers.asset_url('tree_marker.png')
+        }
+      end
     skip_policy_scope
   end
 
