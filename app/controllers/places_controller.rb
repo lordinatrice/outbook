@@ -4,10 +4,14 @@ class PlacesController < ApplicationController
   # pg_search_scope :search_by_address, against: :address
 
   def index
-
-    if params[:category].present?
-      @places = Place.where(category: params[:category]) ||
-      @places = Place.where(address: params[:address])
+    if params[:category].present? != 'Select a category' && params[:address].present?
+      @places = Place.where(category: params[:category]).near(params[:address])
+    elsif
+      params[:category].present? != 'Select a category'
+      @places = Place.where(category: params[:category])
+    elsif
+      params[:address].present?
+      @places = Place.near(params[:address])
     else
       @places = Place.where.not(latitude: nil, longitude: nil)
     end
@@ -16,7 +20,8 @@ class PlacesController < ApplicationController
           lat: place.latitude,
           lng: place.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
-          image_url: helpers.asset_url('tree_marker.png')
+          image_url: helpers.asset_url('tree_marker.png'),
+          id: place.id
         }
       end
     skip_policy_scope
