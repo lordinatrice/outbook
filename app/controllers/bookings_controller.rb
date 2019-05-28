@@ -23,10 +23,16 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       flash[:notice] = "Well done! You successfully booked a place 🎉 "
-      redirect_to dashboard_path('#nav-bookings')
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
     else
       flash[:alert] = "Oops! 😱 a problem has occurred while booking your place "
-      render :show
+      respond_to do |format|
+        format.html { render :show }
+        format.js
+      end
     end
   end
 

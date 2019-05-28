@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   # pg_search_scope :search_by_address, against: :address
 
   def index
-
     if params[:category].present?
       @places = Place.where(category: params[:category]) ||
       @places = Place.where(address: params[:address])
