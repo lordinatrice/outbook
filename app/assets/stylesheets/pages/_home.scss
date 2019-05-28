@@ -64,7 +64,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
 
+form {
+    width: 68%;
+}
+
+input#home-btn {
+    width: 165px;
+}
 
 //responsiveness
 // Small device

@@ -35,5 +35,6 @@ group :development, :production, :test do
   gem 'pg_search'
   gem 'algoliasearch-rails'
   gem 'searchkick', '~> 3.0'
+  gem 'geocoder'
 
 end
