@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       flash[:notice] = "Well done! You successfully booked a place 🎉 "
-      redirect_to dashboard_path
+      redirect_to dashboard_path('#nav-bookings')
     else
       flash[:alert] = "Oops! 😱 a problem has occurred while booking your place "
       render :new
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     flash[:notice] = "You successfully destroyed a booking ☠️"
-    redirect_to bookings_path
+    redirect_to dashboard_paths('#nav-bookings')
     authorize @booking
   end
 

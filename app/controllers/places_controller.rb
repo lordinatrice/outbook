@@ -39,7 +39,7 @@ class PlacesController < ApplicationController
     authorize @place
     if @place.save
       flash[:notice] = "Well done! You successfully added a place 🎉 "
-      redirect_to dashboard_path
+      redirect_to dashboard_path(tab: "bookings")
     else
       flash[:alert] = "Oops! 😱 a problem has occurred while creating your place "
       render :new
