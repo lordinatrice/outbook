@@ -3,8 +3,39 @@ img.d-block.w-100 {
   object-fit: cover;
 }
 
+.form-wrapper > h3 {
+  padding-left: 80px;
+}
+
 ul {
   list-style-type: none;
   text-align: left;
-  padding: 0 0 40px 0;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.headline {
+  width: 500px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.form {
+  padding: 30px;
+  margin: 30px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  top: 280px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.datepicker {
+  width: 250px;
+}
+
+.booking {
+  margin-left: 53px;
 }

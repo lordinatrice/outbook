@@ -24,9 +24,9 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       flash[:notice] = "Well done! You successfully booked a place 🎉 "
-      redirect_to booking_path(@booking)
+      redirect_to dashboard_path
     else
-      flash[:alert] = "Oops! 😱 a problem has occurred while creating your place "
+      flash[:alert] = "Oops! 😱 a problem has occurred while booking your place "
       render :new
     end
   end
