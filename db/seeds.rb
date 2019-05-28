@@ -7,17 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "start"
-user = User.create(email: 'cookbook-admin@lewagon.org', password: 'secret', admin: true)
-user = User.create(email: 'antoine@lewagon.org', password: 'secret')
+
+User.create(email: 'yo@yo.com', password: 'secret')
+User.create(email: 'marguerite@fleur.fr', password: 'secret')
+User.create(email: 'demo@lewagon.org', password: 'secret')
 
 Place.destroy_all
-
-Place.create(name:'Terrasse ensoleillée', address: 'Pigalle', category: 'Terrace', capacity: '4', user_id: 2)
-Place.create(name:'Grande terrasse', address: 'Sentier', category: 'Terrace', capacity: '8', user_id: 2)
-Place.create(name:'Jardin', address: 'Montreuil', category: 'Garden', capacity: '10', user_id: 2)
-Place.create(name:'Jardin fleuri', address: 'Saint Germain', category: 'Garden', capacity: '6', user_id: 2)
-Place.create(name:'Rooftop à Batignolles', address: 'Batignolles', category: 'Rooftop', capacity: '6', user_id: 2)
-Place.create(name:'Rooftop au centre de Paris', address: 'Sentier', category: 'Rooftop', capacity: '6', user_id: 2)
-Place.create(name:'Grand jardin à Paris', address: 'Ranelagh', category: 'Garden', capacity: '12', user_id: 2)
+Place.create(name:'Yellow Sunshine', address: 'Rue du chat qui pète', category: 'Garden', capacity: '4', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968591/hax6tt6cxwngogqdogqo.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968592/pfbcea7kal6uo5kmkxj2.jpg")
+Place.create(name:'La terrasse de Piter', address: 'Rue de Saint-Petersbourg, Paris 8e', category: 'Rooftop', capacity: '25', user_id: 3, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966931/v6bgtdd2yblq1zf6ujcy.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966908/zyug9lgogjs4vqmsk4xp.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966932/zmrn9edxrnstgey5dn28.jpg")
+Place.create(name:'My secret garden', address: 'Bois de Vincennes, Paris 12e', category: 'Garden', capacity: '2', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968994/pdqyxvriii5ei2pcybze.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968995/un36d6096ijfrzcwxgji.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968996/ejwnzqszomdesjjxcufd.jpg")
+Place.create(name:'Eiffel 65', address: 'Tour Effeil, Paris', category: 'Terrace', capacity: '13', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966404/xfahl4nlwcshjoijnzcd.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966406/onwgftegbb1zpbwwui8x.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966405/kzmjsajb0agdh8mzhalt.jpg")
+Place.create(name:'Why think little?', address: 'Chateau de Versailles', category: 'Garden', capacity: '300', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966475/fcazcw6kslzc5z18qwlc.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966476/kjmukk4njboniete4hjl.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966477/dfuenpb88kn0zyantrkk.jpg")
+Place.create(name:'Le Frigo', address: 'Rue des frigos, Paris 13e', category: 'Rooftop', capacity: '33', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558967886/lkw1qxzyqk9vt3rimlf4.png", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558967885/sa5b5uqumtp2eoliuc8o.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558967884/zvaf7shvss7rhsegf4nh.jpg")
+Place.create(name:'Hippodrome de Longchamps', address: '2 Route des Tribunes, 75016 Paris', category: 'Terrace', capacity: '120', user_id: 1, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558965734/pd5uoyfulfnwieqs6ype.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558965735/kutxewvnqvlmcyal4uw9.jpg")
+Place.create(name:'Artflix Gallery', address: 'Rue des Beaux-Arts, Paris 6e', category: 'Garden', capacity: '100', user_id: 1, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968641/f7wxfuvnxledknszdkf0.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968639/izokdrclpnrrncafdp3h.jpg")
+Place.create(name:'Un endroit cosy près de chez vous', address: 'Traverse de la Planète, Marseille', category: 'Terrace', capacity: '15', user_id: 3, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968438/lxkzvqdlkdczdqwnnn8v.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968439/xiaqvvljkidngtv51jcv.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968440/f0qwqaf7lpc2zw69ko44.jpg")
+Place.create(name:"Les Arènes d'Arles, typique du sud !", address: 'Rond-Point des Arènes, Arles', category: 'Terrace', capacity: '300', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966214/ueb8cfo9sb3bq5po6mif.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966216/sorjmcguu9zvok12s7cz.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966215/ny4p9fr9zmw4xy7tkquw.jpg")
+Place.create(name:"Le jardin d'Alice", address: 'Boulevard du Parc, Coupvray', category: 'Garden', capacity: '150', user_id: 3, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558969027/dnasqhtyaoere531q2wl.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558969028/nckgtojaqdyo2yixxiss.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558969029/mynxbgyp6gxzihrdb3vv.jpg")
+Place.create(name:'Le Perchoir', address: '14 rue Crespin du Gast, Paris', category: 'Rooftop', capacity: '5', user_id: 3, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966688/iciudgzqa34b4tnttpy6.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966687/jjfthhxyr1pxbqf6gwnx.jpg", remote_photo3_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1559033111/j6e4qby078qxqoyt6b28.jpg")
+Place.create(name:'Rouge et jaune, à petits pois', address: "Palais de l'Élysée, Paris", category: 'Terrace', capacity: '33', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968835/yqco8kiaxdpqucbswwtb.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558968838/bzck0gxwi7biz7qpjbsa.jpg")
+Place.create(name:'Chez Chewee', address: '10 impasse de Bergame, Paris 20e', category: 'Garden', capacity: '20', user_id: 2, remote_photo_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966286/tnnvmjeok2o2zb2qb34j.jpg", remote_photo2_url: "https://res.cloudinary.com/dabuecrzn/image/upload/v1558966285/izcacsyvsyhbwm0qj1lq.jpg")
 
 puts "end"
