@@ -32,13 +32,15 @@
 #nav-item:hover {
   border-bottom: 4px solid #06BA63;
   border-radius: 0;
-  cursor: pointer;
+  color: #606060;
 }
 
-#nav-item:hover {
-  border-bottom: 4px solid #06BA63;
-  border-radius: 0;
-  color: #606060;
+#nav-tab {
+  .active {
+    border-bottom: 4px solid #06BA63;
+    border-radius: 0;
+    color: #606060;
+  }
 }
 
 #navbarDropdown {

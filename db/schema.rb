@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_082914) do
+ActiveRecord::Schema.define(version: 2019_05_28_133447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
@@ -23,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_05_27_082914) do
     t.datetime "updated_at", null: false
     t.index ["place_id"], name: "index_bookings_on_place_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "joints", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_joints_on_activity_id"
+    t.index ["place_id"], name: "index_joints_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -56,5 +71,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_082914) do
 
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
+  add_foreign_key "joints", "activities"
+  add_foreign_key "joints", "places"
   add_foreign_key "places", "users"
 end

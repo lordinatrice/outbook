@@ -2,7 +2,7 @@
   <h1>My dashboard</h1>
 
   <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div class="nav" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active p-3 ml-4" id="nav-item" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">My places</a>
       <a class="nav-item nav-link p-3 ml-4" id="nav-item" data-toggle="tab" href="#nav-bookings" role="tab" aria-controls="nav-bookings" aria-selected="false">My bookings</a>
     </div>
@@ -12,67 +12,76 @@
   <div class="tab-content" id="nav-tabContent">
 
     <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-      <% @places.each do |place| %>
-        <div class="card-link d-flex justify-content-between p-2 m-0">
+      <% if @places.empty? %>
+        <br>
+        <p style="text-align: center">You don't have a place yet!</p>
+      <% else %>
+        <% @places.each do |place| %>
+          <div class="card-link d-flex justify-content-between p-2 m-0">
 
-          <div class="card-product col-10">
-              <%= link_to '', place_path(place), class: "stretched-link" %>
-              <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= place["name"].capitalize %></h2>
-              <p>At <strong><%= place["address"] %></strong></p>
-              <% if place.bookings.present? %>
-              <p class="btn btn-dark"><em>Booked</em></p>
+            <div class="card-product col-10">
+                <%= link_to '', place_path(place), class: "stretched-link" %>
+                <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
+              <div class="card-product-infos">
+                <h2><%= place["name"].capitalize %></h2>
+                <p>At <strong><%= place["address"] %></strong></p>
+                <% if place.bookings.present? %>
+                <p class="btn btn-dark"><em>Booked</em></p>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="col-2 d-flex align-self-center">
+             <% if policy(place).destroy? %>
+               <div class="mr-2" title="Edit">
+                 <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
+               </div>
+               <div title="Delete">
+                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+               </div>
               <% end %>
             </div>
-          </div>
 
-          <div class="col-2 d-flex align-self-center">
-           <% if policy(place).destroy? %>
-             <div class="mr-2" title="Edit">
-               <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
-             </div>
-             <div title="Delete">
-              <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
-             </div>
-            <% end %>
           </div>
-
-        </div>
+        <% end %>
       <% end %>
       <button class="mt-5" id="valid-btn"><%= link_to "Add a new place", new_place_path %></button>
     </div>
 
     <div class="tab-pane fade" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab">
+      <% if @bookings.empty? %>
+        <br>
+        <p style="text-align: center">You haven't booked a place yet!</p>
+      <% else %>
+        <% @bookings.each do |booking, place| %>
+          <div class="card-link d-flex justify-content-between p-2 m-0">
 
-      <% @bookings.each do |booking, place| %>
-        <div class="card-link d-flex justify-content-between p-2 m-0">
-
-          <div class="card-product col-10">
-            <%= cl_image_tag booking.place.photo, height: 650, width: 1400, crop: :fill%>
-            <div class="card-product-infos">
-              <h2><%= booking.place["name"].capitalize %></h2>
-              <p>On <strong><%= booking.date %></strong></p>
-            </div>
-          </div>
-          <a href=""><%= link_to "", booking_path(booking) %></a>
-
-          <div class="col-2 align-self-center">
-            <% if policy(booking).destroy? %>
-              <div title='Delete'>
-                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="card-product col-10">
+              <%= cl_image_tag booking.place.photo, height: 650, width: 1400, crop: :fill%>
+              <div class="card-product-infos">
+                <h2><%= booking.place["name"].capitalize %></h2>
+                <p>On <strong><%= booking.date %></strong></p>
               </div>
-            <% end %>
-          </div>
+            </div>
+            <a href=""><%= link_to "", booking_path(booking) %></a>
 
-        </div>
+            <div class="col-2 align-self-center">
+              <% if policy(booking).destroy? %>
+                <div title='Delete'>
+                  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+        <% end %>
       <% end %>
-      <button class="mt-5" id="valid-btn"><%= link_to "Book other places", places_path %></button>
+      <button class="mt-5" id="valid-btn"><%= link_to "Book places", places_path %></button>
     </div>
 
   </div>
 
-
+<br>
 </div>
 
 

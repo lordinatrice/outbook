@@ -2,7 +2,33 @@
   <div class="filter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
     <h1 id="title">Outbook</h1>
     <p><span id="banner-typed-text"></span></p>
-    <button id="home-btn"> <%= link_to "Find a place", places_path %></button>
+    <br>
+    <!-- search form -->
+    <div class="container">
+      <div class="row">
+        <div class="col category">
+          <%= form_tag places_path, method: :get do %>
+            <%= text_field_tag :category,
+              params[:category],
+              class: "form-control",
+              placeholder: "Category"
+            %>
+        </div>
+        <div class="col address">
+            <%= text_field_tag :address,
+              params[:address],
+              class: "form-control",
+              placeholder: "Where ?"
+            %>
+        </div>
+      </div>
+      <br>
+        <div class="col button">
+          <%= submit_tag "Find a place", id:"home-btn" %>
+        </div>
+          <% end %>
+    </div>
+
   </div>
 </div>
 
