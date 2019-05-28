@@ -1,13 +1,28 @@
 <%= simple_form_for @place do |f| %>
-  <%= f.input :name, placeholder: 'The Garden of the Hesperides' %>
+  <div class="d-flex row">
+    <div class="col-6">
+      <%= f.input :name, placeholder: 'The Garden of the Hesperides' %>
+    </div>
+    <div class="col-6">
+      <%= f.input :capacity, input_html: { min: '0'}, placeholder:'1' %>
+    </div>
+  </div>
   <%= f.input :address, placeholder: 'Rue de Paradis, Paris' %>
   <%= f.input :category, :include_blank => false, collection: ["Terrace", "Garden", "Rooftop"] %>
-  <%= f.input :capacity, input_html: { min: '0'}, placeholder:'1' %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :photo2 %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :photo3 %>
-  <%= f.input :photo_cache, as: :hidden %>
+
+  <div class="d-flex row">
+    <div class="col-4">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+    <div class="col-4">
+      <%= f.input :photo2 %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+    <div class="col-4">
+      <%= f.input :photo3 %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+  </div>
   <%= f.submit id: 'valid-btn', style: 'color: white', class: 'mb-3' %>
 <% end %>
