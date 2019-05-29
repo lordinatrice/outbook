@@ -97,3 +97,16 @@
   color: #212529;
   text-decoration: none;
 }
+
+.card-link-collapse {
+  position: relative;
+}
+
+.card-link-collapse > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
