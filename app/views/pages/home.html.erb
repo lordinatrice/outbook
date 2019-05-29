@@ -34,14 +34,14 @@
 
 <div class="container">
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558948944/photo-1533743471820-07198f456843_cvtdhn.jpg)">Terrace
-      <a href=""><%= link_to "", places_path %></a>
-    </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558949004/photo-1508333409359-027beab53750_auv2uw.jpg)">Garden
-      <a href=""><%= link_to "", places_path %></a>
+      <a href=""><%= link_to "", 'places?category=Garden' %></a>
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558949039/photo-1513279922550-250c2129b13a_ivd2e7.jpg)">Rooftop
-      <a href=""><%= link_to "", places_path %></a>
+      <a href=""><%= link_to "", 'places?category=Rooftop' %></a>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dabuecrzn/image/upload/v1558948944/photo-1533743471820-07198f456843_cvtdhn.jpg)">Terrace
+      <a href=""><%= link_to "", 'places?category=Terrace' %></a>
     </div>
   </div>
 </div>

@@ -12,10 +12,7 @@ class PlacesController < ApplicationController
       @places = Place.where(category: params[:category])
     elsif params[:address].present?
       @places = Place.near(params[:address])
-    # else
-    #   @places = Place.where.not(latitude: nil, longitude: nil)
     end
-
     @markers = @places.map do |place|
       {
         lat: place.latitude,
