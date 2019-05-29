@@ -5,7 +5,7 @@
     <br>
     <!-- search form -->
     <div class="container-home">
-          <%= form_tag places_path, method: :get do %>
+          <%= form_tag places_path, class: 'form-home', method: :get do %>
       <div class="row">
         <div class="col category">
             <%= select_tag(:category, options_for_select(['Select a category', 'Garden','Rooftop', 'Terrace']), class: "form-control")%>
