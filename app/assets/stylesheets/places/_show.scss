@@ -30,6 +30,7 @@ ul {
   top: 280px;
   width: 350px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  z-index: 99;
 }
 
 .datepicker {
@@ -39,4 +40,38 @@ ul {
 .booking {
   padding-top: 10px;
   margin-left: 53px;
+}
+
+
+// responsiveness
+// Small device
+@media (min-width: 100px) and (max-width: 575px) {
+  .form-show {
+    right: 50px;
+    top: 750px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 576px) {
+  .form-show {
+    right: 200px;
+    top: 750px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .form-show {
+    right: 30px;
+    top: 280px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .form-shows {
+    right: 30px;
+    top: 280px;
+  }
 }
