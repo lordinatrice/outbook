@@ -23,3 +23,5 @@ initAutocomplete();
 import { initAutocompleteBis } from '../plugins/init_autocomplete';
 
 initAutocompleteBis();
+
+$('.collapse').collapse()

@@ -18,16 +18,23 @@
       <% else %>
         <% @places.each do |place| %>
           <div class="card-link d-flex justify-content-between p-2 m-0">
-
-            <div class="card-product col-10">
-                <%= link_to '', place_path(place), class: "stretched-link" %>
-                <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= place["name"].capitalize %></h2>
-                <p>At <strong><%= place["address"] %></strong></p>
-                <% if place.bookings.present? %>
-                <p class="btn btn-dark"><em>Booked</em></p>
-                <% end %>
+            <div class="card-product col-10" id="<%= place.id %>">
+              <%= cl_image_tag place.photo, height: 650, width: 1400, crop: :fill %>
+              <div class="card-product-infos d-flex justify-content-between" style="width: 100%;">
+                <div class="card-link-collapse">
+                  <div>
+                    <h2><%= place["name"].capitalize %></h2>
+                    <p>At <strong><%= place["address"] %></strong></p>
+                  </div>
+                  <%= link_to '', place_path(place), class: "stretched-link" %>
+                </div>
+                <div class="justify-content-right">
+                  <% if place.bookings.present? %>
+                    <button class="btn btn-danger" style="opacity: 0.8" type="button" data-toggle="collapse" data-target="#place-<%= place.id %>" aria-expanded="true" aria-controls="collapseOne">See bookings</button>
+                  <% else %>
+                    <h6><em>No bookings yet</em></h6>
+                  <% end %>
+                </div>
               </div>
             </div>
 
@@ -37,12 +44,37 @@
                  <%= link_to raw('<i class="far fa-edit"></i>'), edit_place_path(place.id), class: "btn btn-dark" %>
                </div>
                <div title="Delete">
-                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), place, class: "btn btn-dark", method: :delete, data: { confirm: 'Are you sure?' } %>
                </div>
               <% end %>
             </div>
 
           </div>
+
+          <div id="place-<%= place.id %>" class="collapse show" aria-labelledby="<%= place.id %>" data-parent="#nav-places">
+            <div class="card-body" style="width: 85%;">
+              <% if place.bookings.present? %>
+                <% place.bookings.each do |booking| %>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p>Booked for <strong><%= booking.date %></strong> by <%= booking.user.email %></p>
+                    <p>Status: <em><%= booking.status.capitalize %></em></p>
+                  </div>
+                  <% if booking.status == "pending" %>
+                    <div class="d-flex align-items-start">
+                      <%= link_to "Accept", dashboard_path, class: "btn btn-danger"  %>
+                      <%= link_to "Refuse", dashboard_path, class: "btn btn-light"  %>
+                    </div>
+                  <% end %>
+                </div>
+                <% end %>
+              <% else %>
+                <p>No bookings yet</p>
+              <% end %>
+            </div>
+          </div>
+
+
         <% end %>
       <% end %>
       <button class="mt-5" id="valid-btn"><%= link_to "Add a new place", new_place_path %></button>
@@ -61,6 +93,7 @@
               <div class="card-product-infos">
                 <h2><%= booking.place["name"].capitalize %></h2>
                 <p>On <strong><%= booking.date %></strong></p>
+                <p>Status: <em><%= booking.status.capitalize %></em></p>
               </div>
             </div>
             <a href=""><%= link_to "", booking_path(booking) %></a>
