@@ -1,32 +1,28 @@
 <div class="home-banner">
   <div class="filter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
     <h1 id="title">Outbook</h1>
-    <p><span id="banner-typed-text"></span></p>
+    <p id="typed-text"><span id="banner-typed-text"></span></p>
     <br>
     <!-- search form -->
-    <div class="container">
+    <div class="container-home">
+          <%= form_tag places_path, method: :get do %>
       <div class="row">
         <div class="col category">
-          <%= form_tag places_path, method: :get do %>
-            <%= text_field_tag :category,
-              params[:category],
-              class: "form-control",
-              placeholder: "Category"
-            %>
+            <%= select_tag(:category, options_for_select(['Select a category', 'Garden','Rooftop', 'Terrace']), class: "form-control")%>
         </div>
         <div class="col address">
             <%= text_field_tag :address,
-              params[:address],
-              class: "form-control",
-              placeholder: "Where ?"
+          params[:address],
+          class: "form-control",
+            placeholder: "Where ?"
             %>
+          </div>
         </div>
-      </div>
-      <br>
-        <div class="col button">
-          <%= submit_tag "Find a place", id:"home-btn" %>
+        <br>
+        <div class="col search-button">
+          <%= submit_tag "Find a place ☀️", id:"home-btn" %>
         </div>
-          <% end %>
+        <% end %>
     </div>
 
   </div>

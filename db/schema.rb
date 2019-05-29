@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_132524) do
+ActiveRecord::Schema.define(version: 2019_05_28_133447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 2019_05_28_132524) do
 
   create_table "joints", force: :cascade do |t|
     t.bigint "activity_id"
-    t.bigint "places_id"
+    t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_joints_on_activity_id"
-    t.index ["places_id"], name: "index_joints_on_places_id"
+    t.index ["place_id"], name: "index_joints_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2019_05_28_132524) do
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
   add_foreign_key "joints", "activities"
-  add_foreign_key "joints", "places", column: "places_id"
+  add_foreign_key "joints", "places"
   add_foreign_key "places", "users"
 end
