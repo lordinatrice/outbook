@@ -62,8 +62,8 @@
                   </div>
                   <% if booking.status == "pending" %>
                     <div class="d-flex align-items-start">
-                      <%= link_to "Accept", dashboard_path, class: "btn btn-danger"  %>
-                      <%= link_to "Refuse", dashboard_path, class: "btn btn-light"  %>
+                      <%= link_to "Accept", booking_accept_path(booking), id: "accept-button", class: "btn btn-danger", data: { confirm: 'Are you sure?' }  %>
+                      <%= link_to "Refuse", booking_decline_path(booking), id: "refuse-button", class: "btn btn-light", data: { confirm: 'Are you sure?' }  %>
                     </div>
                   <% end %>
                 </div>
