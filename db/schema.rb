@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2019_05_29_090811) do
 
   create_table "joints", force: :cascade do |t|
     t.bigint "activity_id"
-    t.bigint "place_id"
+    t.bigint "places_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_joints_on_activity_id"
-    t.index ["place_id"], name: "index_joints_on_place_id"
+    t.index ["places_id"], name: "index_joints_on_places_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -73,6 +73,6 @@ ActiveRecord::Schema.define(version: 2019_05_29_090811) do
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
   add_foreign_key "joints", "activities"
-  add_foreign_key "joints", "places"
+  add_foreign_key "joints", "places", column: "places_id"
   add_foreign_key "places", "users"
 end

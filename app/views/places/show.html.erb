@@ -43,12 +43,10 @@
     <div class="col-md-6 py-5">
       <div class="headline">
         <div class="infos-show">
-          <h2><%= @place.name %></h3>
+          <h3><%= @place.name %></h3>
           <h4><i class="fas fa-map-marker-alt"></i>  <%= @place.address %></h4>
         </div>
-  <!--       <button type="button" id="valid-btn" class="right"><%= link_to "Book this place", new_place_booking_path(@place) %></button> -->
       </div>
-      <!-- name remplacer par title -->
       <div class="about">
         <ul>
           <li>Category: <strong><%= @place.category %></strong></li>
@@ -60,7 +58,6 @@
       <% else %>
         <button id="home-btn"><%= link_to "Back to list", places_path %></button>
       <% end %>
-
     </div>
 
     <div class="form-show">
