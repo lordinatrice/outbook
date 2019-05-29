@@ -70,7 +70,7 @@
             <%= simple_form_for [@place, @booking], method: :post do |f| %>
               <%= f.error_notification %>
               <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Click to select a date" %>
-              <%= f.button :submit, "Book this place", id: "valid-btn", class: "form-actions booking", style: "color: white", data: { confirm: "Are you sure to book this place at this date?" } %>
+              <%= f.button :submit, "Book this place", id: "valid-btn", class: "form-actions booking", style: "color: white", data: { confirm: "Are you sure?" } %>
             <% end %>
           <% end %>
         </div>
