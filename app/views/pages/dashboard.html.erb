@@ -30,7 +30,7 @@
                 </div>
                 <div class="justify-content-right">
                   <% if place.bookings.present? %>
-                    <button class="btn btn-danger" style="opacity: 0.8" type="button" data-toggle="collapse" data-target="#place-<%= place.id %>" aria-expanded="true" aria-controls="collapseOne">See bookings</button>
+                    <button class="btn btn-info" style="opacity: 0.8" type="button" data-toggle="collapse" data-target="#place-<%= place.id %>" aria-expanded="true" aria-controls="collapseOne">See bookings</button>
                   <% else %>
                     <h6><em>No bookings yet</em></h6>
                   <% end %>
@@ -52,21 +52,22 @@
           </div>
 
           <div id="place-<%= place.id %>" class="collapse show" aria-labelledby="<%= place.id %>" data-parent="#nav-places">
-            <div class="card-body" style="width: 85%;">
+            <div class="card-body">
               <% if place.bookings.present? %>
                 <% place.bookings.each do |booking| %>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between" style="width: 85%; border-left: 4px solid #989898; padding-left: 20px;">
                   <div>
-                    <p>Booked for <strong><%= booking.date %></strong> by <%= booking.user.email %></p>
-                    <p>Status: <em><%= booking.status.capitalize %></em></p>
+                    <h6>Booked for <strong><%= booking.date %></strong> by <%= booking.user.email %></h6>
+                    <h6>Status: <em><%= booking.status.capitalize %></em></h6>
                   </div>
                   <% if booking.status == "pending" %>
-                    <div class="d-flex align-items-start">
-                      <%= link_to "Accept", booking_accept_path(booking), id: "accept-button", class: "btn btn-danger", data: { confirm: 'Are you sure?' }  %>
+                    <div class="d-flex align-items-start" style="margin-right: 10px;">
+                      <%= link_to "Accept", booking_accept_path(booking), id: "accept-button", class: "btn btn-dark", data: { confirm: 'Are you sure?' }  %>
                       <%= link_to "Refuse", booking_decline_path(booking), id: "refuse-button", class: "btn btn-light", data: { confirm: 'Are you sure?' }  %>
                     </div>
                   <% end %>
                 </div>
+                <br>
                 <% end %>
               <% else %>
                 <p>No bookings yet</p>
