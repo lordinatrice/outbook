@@ -4,17 +4,18 @@ class PlacesController < ApplicationController
   # pg_search_scope :search_by_address, against: :address
 
   def index
-    if params[:category].present? != 'Select a category' && params[:address].present?
+    @places = Place.where.not(latitude: nil, longitude: nil)
+
+    if params[:category] != 'Select a category' && params[:address].present?
       @places = Place.where(category: params[:category]).near(params[:address])
-    elsif
-      params[:category].present? != 'Select a category'
+    elsif params[:category].present? && params[:category] != 'Select a category'
       @places = Place.where(category: params[:category])
-    elsif
-      params[:address].present?
+    elsif params[:address].present?
       @places = Place.near(params[:address])
-    else
-      @places = Place.where.not(latitude: nil, longitude: nil)
+    # else
+    #   @places = Place.where.not(latitude: nil, longitude: nil)
     end
+
     @markers = @places.map do |place|
       {
         lat: place.latitude,
