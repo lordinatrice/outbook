@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      flash[:notice] = "Well done! You successfully booked a place 🎉 "
+      flash[:notice] = "Well done! You successfully booked a place 🎉, it should be accepted by the owner soon! "
       respond_to do |format|
         format.html { redirect_to dashboard_path }
         format.js
