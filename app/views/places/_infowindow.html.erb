@@ -1,7 +1,7 @@
 
+<div class="">
   <%= cl_image_tag place.photo, height: 350, width: 350, crop: :fill, class: "" %>
 
-<div class="">
   <h3><%= place.name %></h3>
 
   <p>
@@ -11,4 +11,5 @@
   <i class="fas fa-user-friends"> <%= place.capacity %> </i>
 
   <%= link_to "", place_path(place), class: "stretched-link"%>
+
 </div>
