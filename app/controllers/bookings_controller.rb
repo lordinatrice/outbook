@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     flash[:notice] = "You successfully destroyed a booking ☠️"
-    redirect_to dashboard_paths('#nav-bookings')
+    redirect_to dashboard_path('#nav-bookings')
     authorize @booking
   end
 
