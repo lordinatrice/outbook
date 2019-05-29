@@ -15,15 +15,15 @@ class PlacesController < ApplicationController
     else
       @places = Place.where.not(latitude: nil, longitude: nil)
     end
-      @markers = @places.map do |place|
-        {
-          lat: place.latitude,
-          lng: place.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
-          image_url: helpers.asset_url('tree_marker.png'),
-          id: place.id
-        }
-      end
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { place: place }),
+        image_url: helpers.asset_url('tree_marker.png'),
+        id: place.id
+      }
+    end
     skip_policy_scope
   end
 

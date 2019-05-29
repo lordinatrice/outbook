@@ -64,7 +64,33 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
+.search-button {
+    text-align: center;
+}
+
+#typed-text {
+  text-align: center;
+}
+.ap-suggestion {
+  color: #05ba63;
+  opacity: 0.6;
+}
+
+
+.ap-cursor .ap-suggestion-icon svg{
+  fill: #05ba63;
+  opacity: 1;
+}
+.ap-suggestion-icon svg{
+  fill: #05ba63;
+  opacity: 0.3;
+}
+
+.ap-footer {
+  opacity: 0;
+}
+
+.container-home {
     display: flex;
     justify-content: center;
 }
