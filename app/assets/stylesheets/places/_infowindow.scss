@@ -1,5 +1,25 @@
 img {
-  height: 150px;
-  width: 150px;
-  // object-fit: cover;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+h2 {
+  font-family: "Poppins", "Poppins", "sans-serif";
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.info-window {
+  margin: 15px;
 }
